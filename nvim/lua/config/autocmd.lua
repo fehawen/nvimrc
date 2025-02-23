@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, {
   pattern = {'*'},
   callback = function(ev)
     vim.cmd[[
-      let w = '\%80v'
+      let w = '\%81v'
       if &ft == 'python'
         w = '\%73v'
       endif

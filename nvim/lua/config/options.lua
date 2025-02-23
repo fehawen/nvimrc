@@ -33,7 +33,7 @@ vim.opt.shiftwidth = 4
 vim.opt.shiftround = true -- round indent to sw compatible
 vim.opt.autoindent = true
 vim.opt.wrap = false -- using wrapping-paper to show it in virtual text.
-vim.opt.textwidth = 80
+--vim.opt.textwidth = 80
 
 vim.opt.pumheight = 10
 
