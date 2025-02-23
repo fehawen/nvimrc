@@ -1,0 +1,65 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function ()
+    local configs = require("nvim-treesitter.configs")
+
+    configs.setup({
+      ensure_installed = {
+        "c",
+        "c_sharp",
+        "cmake",
+        "cmake",
+        "cpp",
+        "comment",
+        "csv",
+        "diff",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "gpg",
+        "graphql",
+        "json",
+        "lua",
+        "luadoc",
+        "make",
+        "markdown",
+        "markdown_inline",
+        "vim",
+        "vimdoc",
+        "query",
+        "go",
+        "go",
+        "java",
+        "rust",
+        "yaml",
+        "toml",
+        "dockerfile",
+        "typescript",
+        "javascript",
+        "html",
+        "css",
+        "scss",
+        "sql",
+        "ssh_config",
+        "terraform",
+        "xresources",
+        "zig",
+        "tmux",
+        "bash",
+        "perl",
+        "php"
+      },
+      sync_install = false,
+      auto_install = true,
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false
+      },
+      indent = { enable = true },
+      additional_vim_regex_highlighting = false,
+    })
+  end
+}

@@ -1,0 +1,7 @@
+nvimrc
+------
+
+Config for NeoVim.
+
+Run `chmod +x install.sh && ./install.sh` to install. A backup of your existing
+nvim config will be created.
