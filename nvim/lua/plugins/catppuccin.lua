@@ -27,7 +27,11 @@ return {
         types = {},
       },
       color_overrides = {},
-      custom_highlights = {},
+      custom_highlights = function(colors)
+        return {
+          ColorColumn = { fg = colors.base, bg = colors.blue },
+        }
+      end,
       integrations = { -- https://github.com/catppuccin/nvim#integrations
         cmp = true,
         gitsigns = true,

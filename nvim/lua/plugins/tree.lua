@@ -17,7 +17,7 @@ return {
         return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
-      api.config.mappings.default_on_attach(bufnr)
+      -- api.config.mappings.default_on_attach(bufnr)
 
       vim.keymap.set('n', 'p', api.node.open.preview, opts('Open Preview'))
       vim.keymap.set('n', 'S', api.node.open.replace_tree_buffer, opts('Open: In Place'))
@@ -43,13 +43,13 @@ return {
         sorter = 'case_sensitive',
       },
       view = {
-        width = 30,
+        width = 40,
       },
       renderer = {
         group_empty = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
       on_attach = custom_mappings,
     }

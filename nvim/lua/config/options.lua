@@ -1,11 +1,14 @@
 vim.g.have_nerd_font = true
 
+-- See config/autocmd.lua
+vim.g.highlight_column_default = 81
+vim.g.highlight_column = vim.g.highlight_column_default
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.numberwidth = 5
 vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes'
-vim.opt.cursorline = false
 
 vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.smartcase = true
@@ -33,9 +36,8 @@ vim.opt.shiftwidth = 4
 vim.opt.shiftround = true -- round indent to sw compatible
 vim.opt.autoindent = true
 vim.opt.wrap = false -- using wrapping-paper to show it in virtual text.
---vim.opt.textwidth = 80
 
-vim.opt.pumheight = 10
+vim.opt.pumheight = 10 -- probably gets overwritten by plugins, whatevs
 
 vim.opt.hidden = false -- Require file write
 

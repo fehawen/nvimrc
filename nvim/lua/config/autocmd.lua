@@ -8,20 +8,18 @@ vim.api.nvim_create_autocmd({'VimEnter'}, {
 vim.api.nvim_create_autocmd({'WinEnter', 'BufEnter'}, {
   pattern = {'*'},
   callback = function(ev)
-    vim.cmd[[
-      let w = '\%81v'
-      if &ft == 'python'
-        w = '\%73v'
-      endif
-
-      call matchadd('ColorColumn', w)
-    ]]
+    if vim.g.highlight_column ~= nil then
+      vim.fn.matchadd('ColorColumn', '\\%' .. vim.g.highlight_column .. 'v', 100)
+    end
   end
 })
 
 vim.api.nvim_create_autocmd({'WinLeave', 'BufLeave'}, {
   pattern = {'*'},
   callback = function(ev)
-    vim.cmd[[ call clearmatches() ]]
+    if vim.g.highlight_column ~= nil then
+      vim.fn.clearmatches()
+      vim.g.highlight_column = vim.g.highlight_column_default
+    end
   end
 })
