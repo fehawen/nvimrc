@@ -10,12 +10,14 @@ vim.opt.numberwidth = 5
 vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes'
 
+vim.opt.title = true
+
 vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.smartcase = true
 
-vim.opt.list = true
-vim.opt.listchars = 'tab:⋮ ,trail:·'
-vim.opt.fillchars = 'vert:│,fold:┄,diff:╱'
+vim.opt.list = true -- Controls whether special chars are shown, e.g. tabs etc
+vim.opt.listchars = 'tab:│ ,trail:·'
+vim.opt.fillchars = 'vert:⋮,fold:┄,diff:╱'
 vim.opt.showbreak = '↪'
 
 vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
@@ -24,6 +26,7 @@ vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below 
 vim.opt.sidescrolloff = 8 -- Minimal number of screen columns to keep left and right of the cursor.
 
 vim.opt.path = vim.opt.path + '**'
+vim.opt.wildignorecase = true
 
 vim.opt.showcmd = false
 vim.opt.autoread = true -- auto load file changes occured outside vim

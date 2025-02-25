@@ -6,7 +6,8 @@ return {
     {'hrsh7th/cmp-nvim-lsp'},
   },
   config = function()
-    local lsp_defaults = require('lspconfig').util.default_config
+    local lspconfig = require('lspconfig')
+    local lsp_defaults = lspconfig.util.default_config
 
     -- Add cmp_nvim_lsp capabilities settings to lspconfig
     -- This should be executed before you configure any language server
@@ -15,6 +16,9 @@ return {
       lsp_defaults.capabilities,
       require('cmp_nvim_lsp').default_capabilities()
     )
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     -- LspAttach is where you enable features that only work
     -- if there is a language server active in the file
@@ -36,8 +40,25 @@ return {
       end,
     })
 
-    -- TODO: Add language servers
-    -- require('lspconfig').gleam.setup({})
-    -- require('lspconfig').ocamllsp.setup({})
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+    -- https://microsoft.github.io/language-server-protocol/implementors/servers/
+
+    lspconfig.bashls.setup({ capabilities = capabilites })
+    lspconfig.html.setup({ capabilities = capabilites })
+    lspconfig.cssls.setup({ capabilities = capabilites })
+    lspconfig.lua_ls.setup({ capabilities = capabilites })
+
+    lspconfig.gopls.setup({
+      capabilities = capabilites,
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+        },
+      },
+    })
   end
 }

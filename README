@@ -5,3 +5,31 @@ Config for NeoVim.
 
 Run `chmod +x install.sh && ./install.sh` to install. A backup of your existing
 nvim config will be created.
+
+LSPs
+
+    shellcheck,
+    shfmt:
+        $ <distro package manager install cmd> shellcheck fmt
+
+    bashls:
+        $ npm i -g bash-language-server
+
+    gopls:
+        $ go install golang.org/x/tools/gopls@latest
+        or
+        $ <distro package manager install cmd> gopls
+
+    lua_ls
+        https://github.com/LuaLS/lua-language-server/releases/latest
+        $ mkdir ~/.local/share/lua-language-server
+        $ tar -xzvf <lua-language-server-{version}-linux-x64.tar.gz> \
+            -C ~/.local/share/lua-language-server
+        $ PATH=$PATH:"$HOME/.local/share/lua-language-server/bin"
+
+    vscode-html-language-server,
+    vscode-css-language-server,
+    vscode-json-language-server,
+    vscode-eslint-language-server:
+        $ npm i -g vscode-langservers-extracted
+

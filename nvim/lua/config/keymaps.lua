@@ -6,6 +6,10 @@ vim.keymap.set('v', '<C-x>', '"+c')
 vim.keymap.set('v', '<C-v>', 'c<ESC>"+p')
 vim.keymap.set('i', '<C-v>', '<ESC>"+pa')
 
+-- Diagnostics
+vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev)
+
 -- Find
 vim.keymap.set('n', '<C-f>', ':find<Space>')
 
@@ -17,8 +21,8 @@ vim.keymap.set('n', '<C-Left>', ':tabp<CR>')
 vim.keymap.set('n', '<C-Right>', ':tabn<CR>')
 
 -- Buffers
-vim.keymap.set('n', '<C-h>', ':bN<CR>')
-vim.keymap.set('n', '<C-l>', ':bp<CR>')
+vim.keymap.set('n', '<C-h>', ':bN<CR>', { silent = true })
+vim.keymap.set('n', '<C-l>', ':bp<CR>', { silent = true })
 
 -- Terminal open and close
 vim.api.nvim_create_autocmd({ 'TermOpen', 'BufEnter' }, {
