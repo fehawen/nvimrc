@@ -9,9 +9,11 @@ return {
       {name = 'nvim_lsp'},
       },
       mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
         ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-j>'] = cmp.mapping.scroll_docs(4),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
       }),
       snippet = {
         expand = function(args)

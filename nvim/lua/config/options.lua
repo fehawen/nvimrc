@@ -20,12 +20,15 @@ vim.opt.listchars = 'tab:│ ,trail:·'
 vim.opt.fillchars = 'vert:⋮,fold:┄,diff:╱'
 vim.opt.showbreak = '↪'
 
+vim.opt.backspace = 'indent,eol,start' -- Allow backspace on indent, eol and ins mode start pos
+
+vim.opt.iskeyword:append('-') -- Treat string-string as whole word
+
 vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
 vim.opt.cursorline = true -- Show which line your cursor is on
 vim.opt.scrolloff = 8 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.sidescrolloff = 8 -- Minimal number of screen columns to keep left and right of the cursor.
 
-vim.opt.path = vim.opt.path + '**'
 vim.opt.wildignorecase = true
 
 vim.opt.showcmd = false

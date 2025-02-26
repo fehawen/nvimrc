@@ -75,25 +75,5 @@ return {
     lspconfig.sqlls.setup({ capabilities = capabilities })
     lspconfig.ts_ls.setup({ capabilities = capabilities })
     lspconfig.yamlls.setup({ capabilities = capabilities })
-
-    local cmp = require('cmp')
-
-    cmp.setup({
-      sources = {
-        {name = 'nvim_lsp'},
-      },
-      snippet = {
-        expand = function(args)
-          vim.snippet.expand(args.body)
-        end,
-      },
-      mapping = cmp.mapping.preset.insert({
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      }),
-    })
   end
 }
