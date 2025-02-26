@@ -50,7 +50,8 @@ return {
         "tmux",
         "bash",
         "perl",
-        "php"
+        "php",
+        "regex"
       },
       sync_install = false,
       auto_install = true,
