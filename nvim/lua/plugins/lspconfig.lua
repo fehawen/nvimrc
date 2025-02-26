@@ -25,7 +25,7 @@ return {
     vim.api.nvim_create_autocmd('LspAttach', {
       desc = 'LSP actions',
       callback = function(event)
-        local opts = {buffer = event.buf}
+        local opts = { buffer = event.buf }
 
         vim.keymap.set('n', '<C-m>', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
         vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -43,13 +43,19 @@ return {
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
     -- https://microsoft.github.io/language-server-protocol/implementors/servers/
 
-    lspconfig.bashls.setup({ capabilities = capabilites })
-    lspconfig.html.setup({ capabilities = capabilites })
-    lspconfig.cssls.setup({ capabilities = capabilites })
-    lspconfig.lua_ls.setup({ capabilities = capabilites })
+    lspconfig.ansiblels.setup({ capabilities = capabilities })
+    lspconfig.bashls.setup({ capabilities = capabilities })
+    lspconfig.biome.setup({ capabilities = capabilities })
+    lspconfig.ccls.setup({ capabilities = capabilities })
+    lspconfig.clangd.setup({ capabilities = capabilities })
+    lspconfig.cmake.setup({ capabilities = capabilities })
+    lspconfig.cssls.setup({ capabilities = capabilities })
+    lspconfig.dockerls.setup({ capabilities = capabilities })
+    lspconfig.docker_compose_language_service.setup({ capabilities = capabilities })
+    lspconfig.eslint.setup({ capabilities = capabilities })
 
     lspconfig.gopls.setup({
-      capabilities = capabilites,
+      capabilities = capabilities,
       settings = {
         gopls = {
           analyses = {
@@ -59,6 +65,35 @@ return {
           gofumpt = true,
         },
       },
+    })
+
+    lspconfig.html.setup({ capabilities = capabilities })
+    lspconfig.jsonls.setup({ capabilities = capabilities })
+    lspconfig.lua_ls.setup({ capabilities = capabilities })
+    lspconfig.pylsp.setup({ capabilities = capabilities })
+    lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+    lspconfig.sqlls.setup({ capabilities = capabilities })
+    lspconfig.ts_ls.setup({ capabilities = capabilities })
+    lspconfig.yamlls.setup({ capabilities = capabilities })
+
+    local cmp = require('cmp')
+
+    cmp.setup({
+      sources = {
+        {name = 'nvim_lsp'},
+      },
+      snippet = {
+        expand = function(args)
+          vim.snippet.expand(args.body)
+        end,
+      },
+      mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp.mapping.select_next_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      }),
     })
   end
 }

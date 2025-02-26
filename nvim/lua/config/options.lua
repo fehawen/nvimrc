@@ -44,6 +44,9 @@ vim.opt.pumheight = 10 -- probably gets overwritten by plugins, whatevs
 
 vim.opt.hidden = false -- Require file write
 
+-- Deno language server
+vim.g.markdown_fenced_languages = { 'ts=typescript' }
+
 -- Go
 vim.g.go_highlight_types = 1
 vim.g.go_highlight_fields = 1

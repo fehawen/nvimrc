@@ -8,12 +8,23 @@ nvim config will be created.
 
 LSPs
 
-    shellcheck,
-    shfmt:
-        $ <distro package manager install cmd> shellcheck fmt
+    ansiblels:
+        $ npm i -g @ansible/ansible-language-server
 
     bashls:
         $ npm i -g bash-language-server
+
+    biome:
+        $ npm i -g @biomejs/biome
+
+    cmake:
+        $ pip install cmake-language-server
+
+    dockerls:
+        $ npm i -g dockerfile-language-server-nodejs
+
+    docker_compose_language_service:
+        $ npm i -g @microsoft/compose-language-service
 
     gopls:
         $ go install golang.org/x/tools/gopls@latest
@@ -27,9 +38,25 @@ LSPs
             -C ~/.local/share/lua-language-server
         $ PATH=$PATH:"$HOME/.local/share/lua-language-server/bin"
 
+    pylsp:
+      $ pip install python-lsp-server
+
+    shellcheck,
+    shfmt:
+        $ <distro package manager install cmd> shellcheck fmt
+
+    sqlls:
+      $ npm i -g sql-language-server
+
+    ts_ls:
+      $ npm i -g typescript typescript-language-server
+
     vscode-html-language-server,
     vscode-css-language-server,
     vscode-json-language-server,
     vscode-eslint-language-server:
         $ npm i -g vscode-langservers-extracted
+
+    yamlls:
+      $ yarn global add yaml-language-server
 

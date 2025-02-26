@@ -13,9 +13,6 @@ vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev)
 -- Find
 vim.keymap.set('n', '<C-f>', ':find<Space>')
 
--- Popup menu
-vim.cmd[[ inoremap <expr><S-TAB> pumvisible() ? "\<Esc>" : "\<C-n>"' ]]
-
 -- Tabs
 vim.keymap.set('n', '<C-Left>', ':tabp<CR>')
 vim.keymap.set('n', '<C-Right>', ':tabn<CR>')
