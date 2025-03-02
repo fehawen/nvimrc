@@ -16,8 +16,8 @@ vim.opt.ignorecase = true -- Case-insensitive searching UNLESS \C or one or more
 vim.opt.smartcase = true
 
 vim.opt.list = true -- Controls whether special chars are shown, e.g. tabs etc
-vim.opt.listchars = 'tab:│ ,trail:·'
-vim.opt.fillchars = 'vert:⋮,fold:┄,diff:╱'
+vim.opt.listchars = 'tab:⋮ ,trail:·'
+vim.opt.fillchars = 'vert:│,fold:┄,diff:╱'
 vim.opt.showbreak = '↪'
 
 vim.opt.backspace = 'indent,eol,start' -- Allow backspace on indent, eol and ins mode start pos
@@ -33,6 +33,12 @@ vim.opt.wildignorecase = true
 
 vim.opt.showcmd = false
 vim.opt.autoread = true -- auto load file changes occured outside vim
+
+local symbols = { Error = '󰅙', Info = '󰋼', Hint = '󰌵', Warn = '' }
+for name, icon in pairs(symbols) do
+  local hl = 'DiagnosticSign' .. name
+  vim.fn.sign_define(hl, { text = icon, numhl = hl, texthl = hl })
+end
 
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = -1 -- Negative to use shiftwidth value

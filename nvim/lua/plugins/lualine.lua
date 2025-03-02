@@ -4,10 +4,10 @@ return {
   config = function()
     require('lualine').setup({
       options = {
-        icons_enabled = true,
         theme = 'catppuccin',
-        component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        icons_enabled = true,
+        component_separators = { left = '/', right = '/' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
           statusline = { 'NvimTree' },
           winbar = {},
