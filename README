@@ -58,5 +58,5 @@ LSPs
         $ npm i -g vscode-langservers-extracted
 
     yamlls:
-      $ yarn global add yaml-language-server
+      $ npm i -g yaml-language-server
 
